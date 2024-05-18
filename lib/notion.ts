@@ -7,7 +7,7 @@ const notion = new Client({
     auth: process.env.NOTION_KEY,
 });
 
-const n2m = new NotionToMarkdown({notionClient :notion});
+const n2m = new NotionToMarkdown({ notionClient: notion });
 // create a function to get all published blogs from notion api using NOTION_DATABASE_ID from the env
 // filter out only published blogs
 // sort the blogs in descending order based on the date they were created.
@@ -71,7 +71,7 @@ export const getToday = (datestring: string) => {
 // }
 
 // function getSinglePost - fetch a single blog from notion and convert it to markdown format
-export const getSinglePost = async(slug: string) => {
+export const getSinglePost = async (slug: string) => {
     const response = await notion.databases.query({
         database_id: process.env.NOTION_DATABASE_ID ?? '',
         filter: {

@@ -7,6 +7,7 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import { getAllPublishedBlogs } from "../../lib/notion";
+import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 
 // define interface for the posts according to post metadata from notion.js
 // the posts will be an array of objects with the following properties: id, title, tags, description, date, and slug.
@@ -32,7 +33,7 @@ export default function Home({ posts }: { posts: Post[] }) {
         {/* in the main section, use map function to present the post */}
         <h1>Blogs</h1>
         {posts.map((post: any, index: number) => (
-          <section key={index}>
+          <section key={index} className={styles.card}>
             <div>
               <h2>
                 <Link href={post.slug}>
