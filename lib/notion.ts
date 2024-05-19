@@ -1,6 +1,5 @@
 // this file will be used to manage all functions related to requests with Notion API
 import { Client } from "@notionhq/client";
-// import package convert notion to markdown
 import { NotionToMarkdown } from "notion-to-md";
 
 const notion = new Client({
@@ -12,7 +11,6 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
 // filter out only published blogs
 // sort the blogs in descending order based on the date they were created.
 export async function getAllPublishedBlogs() {
-
     const posts = await notion.databases.query({
         database_id: process.env.NOTION_DATABASE_ID ?? '',
         filter: {
@@ -31,6 +29,7 @@ export async function getAllPublishedBlogs() {
     });
 
     const allPosts = posts.results;
+    console.log(allPosts);
     return allPosts.map((post) => {
         return getPageMetaData(post);
     });
@@ -45,11 +44,25 @@ const getPageMetaData = (post: any) => {
         tags: post.properties.tags.multi_select.map((tag: any) => tag.name),
         description: post.properties.description.rich_text[0].plain_text,
         date: getToday(post.properties.date.last_edited_time),
-        // slug: generateSlug(post.properties.name.title[0].plain_text),
         slug: post.properties.slug.rich_text[0].plain_text,
+        cover: post.cover ? getCoverFile(post) : 'https://www.notion.so/images/page-cover/met_paul_signac.jpg',
     };
 }
 
+// get cover file url from Notion API
+export const getCoverFile = (post: any) => {
+    const coverType = post.cover.type;
+    let coverUrl = "";
+
+    if (coverType === "external") {
+        coverUrl = post.cover.external.url;
+    }else if (coverType === "file") {
+        coverUrl = post.cover.file.url;
+    }
+
+    console.log(coverUrl);
+    return coverUrl;
+}
 // using the getToday function to format the date from Notion to a more human-readable format.
 export const getToday = (datestring: string) => {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -64,11 +77,6 @@ export const getToday = (datestring: string) => {
     let today = `${month} ${day}, ${year}`;
     return today;
 }
-
-// create a function to generate the slug of a blog post based on the title
-// export const generateSlug = (title: string) => {
-//     return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^\-+|\-+$/g, '');
-// }
 
 // function getSinglePost - fetch a single blog from notion and convert it to markdown format
 export const getSinglePost = async (slug: string) => {

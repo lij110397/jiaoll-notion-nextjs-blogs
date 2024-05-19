@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import daisyui from "daisyui";
 
 const config: Config = {
   content: [
@@ -15,6 +16,22 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    daisyui,
+  ],
+  daisyui: {
+    themes: ["dark",
+      {
+        'mytheme': {                          // 自定义主题名
+          'primary': '#3D6838',               // 主色
+          'primary-content': '#ffffff',            // 白色做为主色文字色
+          'secondary': '#D6E8CE',              // 浅色
+          'secondary-content': '#3D6838',
+          'neutral': '#F6F8F9'
+          // 'primary-focus': '#4506cb',         // 主色加深
+        },
+      },
+    ]
+  },
 };
 export default config;
