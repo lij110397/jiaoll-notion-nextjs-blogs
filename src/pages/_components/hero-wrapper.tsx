@@ -42,7 +42,7 @@ const HeroWrapper: React.FC<HeroProps> = ({ title, url, metadata }) => {
         ) : (
           <>
             <div className='max-w-md'>
-              <h1 className='text-6xl font-bold uppercase text-primary-content'>
+              <h1 className='text-6xl font-bold uppercase text-primary'>
                 {title}
               </h1>
             </div>

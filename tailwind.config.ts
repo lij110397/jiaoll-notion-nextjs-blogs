@@ -25,13 +25,13 @@ const config: Config = {
         "mytheme": {                          // 自定义主题名
           "primary": "#3D6838",               
           "secondary": "#D6E8CE",              
-          "accent": "#fffff",
+          "accent": "#ffff",
           "neutral": "#495057",
           "base-100": "#FFFFFF",
-          "info": "#fffff",
-          "success": "#fffff",
-          "warning": "#fffff",
-          "error": "#fffff",
+          "info": "#ffff",
+          "success": "#ffff",
+          "warning": "#ffff",
+          "error": "#ffff",
         },
       },
     ]
