@@ -1,22 +1,8 @@
 // present a single post page
 import { getAllPublishedBlogs, getSinglePost } from '@/lib/notion'
-import ReactMarkdown from 'react-markdown'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-
-const CodeBlock = ({
-  language,
-  codestring,
-}: {
-  language: string
-  codestring: string
-}) => {
-  return (
-    <SyntaxHighlighter language={language} style={vscDarkPlus} PreTag='div'>
-      {codestring}
-    </SyntaxHighlighter>
-  )
-}
+import HomeLayout from '@/components/_homelayout'
+import { NotionRenderer } from 'react-notion-x'
+import { ExtendedRecordMap } from 'notion-types'
 
 type PostProps = {
   post: {
@@ -24,39 +10,29 @@ type PostProps = {
       title: string
       date: string
       tags: string[]
+      cover: string
     }
-    markdown: {
-      parent: string
-    }
+    recordMap: ExtendedRecordMap
   }
 }
 
 const Post = ({ post }: PostProps) => {
   return (
-    <section>
-      <h2>{post.metadata.title}</h2>
-      <span>{post.metadata.date}</span>
-      <p style={{ color: 'gray' }}>{post.metadata.tags.join(', ')}</p>
-      <ReactMarkdown
-        components={{
-          code({ node, className, children, ...props }) {
-            const match = /language-(\w+)/.exec(className || '')
-            return match ? (
-              <CodeBlock
-                codestring={String(children).replace(/\n$/, '')}
-                language={match[1]}
-              />
-            ) : (
-              <code className={className} {...props}>
-                {children}
-              </code>
-            )
-          },
-        }}
-      >
-        {post.markdown.parent}
-      </ReactMarkdown>
-    </section>
+    <HomeLayout
+      pageTitle={post.metadata.title}
+      url={post.metadata.cover}
+      metadata={post.metadata}
+    >
+      <section className='px-56 py-40'>
+        <div className='text-5xl'>{post.metadata.title} </div>
+        <NotionRenderer
+          recordMap={post.recordMap}
+          fullPage={false}
+          darkMode={false}
+          previewImages={false}
+        />
+      </section>
+    </HomeLayout>
   )
 }
 export default Post

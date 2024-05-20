@@ -35,6 +35,12 @@ body {
 /* rewrite the style of css badge */
 @layer components {
   .badge {
-    @apply inline-block px-2 py-1 text-xs font-semibold leading-none rounded-full py-3 flex items-center justify-center;
+    @apply inline-block text-xs font-semibold leading-none rounded-xl py-3 px-5 flex items-center justify-center;
+  }
+}
+
+@layer components {
+  .bg-day {
+    @apply bg-primary;
   }
 }

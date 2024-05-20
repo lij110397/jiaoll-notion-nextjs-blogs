@@ -1,12 +1,13 @@
 // this file will be used to manage all functions related to requests with Notion API
 import { Client } from "@notionhq/client";
-import { NotionToMarkdown } from "notion-to-md";
-
+// import { NotionToMarkdown } from "notion-to-md";
+import { NotionAPI } from 'notion-client';
 const notion = new Client({
     auth: process.env.NOTION_KEY,
 });
 
-const n2m = new NotionToMarkdown({ notionClient: notion });
+const notionAPI = new NotionAPI()
+// const n2m = new NotionToMarkdown({ notionClient: notion });
 // create a function to get all published blogs from notion api using NOTION_DATABASE_ID from the env
 // filter out only published blogs
 // sort the blogs in descending order based on the date they were created.
@@ -29,7 +30,6 @@ export async function getAllPublishedBlogs() {
     });
 
     const allPosts = posts.results;
-    console.log(allPosts);
     return allPosts.map((post) => {
         return getPageMetaData(post);
     });
@@ -60,9 +60,9 @@ export const getCoverFile = (post: any) => {
         coverUrl = post.cover.file.url;
     }
 
-    console.log(coverUrl);
     return coverUrl;
 }
+
 // using the getToday function to format the date from Notion to a more human-readable format.
 export const getToday = (datestring: string) => {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -94,11 +94,15 @@ export const getSinglePost = async (slug: string) => {
 
     const page = response.results[0];
     const metadata = getPageMetaData(page);
-    const mdblocks = await n2m.pageToMarkdown(page.id);
-    const mdString = n2m.toMarkdownString(mdblocks);
+    // get recordMap from Notion
+    const recordMap = await notionAPI.getPage(page.id);
 
+    // const mdblocks = await n2m.pageToMarkdown(page.id);
+    // const mdString = n2m.toMarkdownString(mdblocks);
+    // console.log('mdString: ',mdString);
+    
     return {
         metadata,
-        markdown: mdString,
+        recordMap
     };
 }
