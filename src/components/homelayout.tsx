@@ -14,6 +14,7 @@ interface SubLayoutProps {
     cover: string
   }
 }
+
 const HomeLayout: React.FC<SubLayoutProps> = ({ children, pageTitle, url, metadata }) => {
   return (
     <>

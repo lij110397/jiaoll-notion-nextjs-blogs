@@ -1,6 +1,5 @@
 // this file will be used to manage all functions related to requests with Notion API
 import { Client } from "@notionhq/client";
-// import { NotionToMarkdown } from "notion-to-md";
 import { NotionAPI } from 'notion-client';
 const notion = new Client({
     auth: process.env.NOTION_KEY,
@@ -96,10 +95,6 @@ export const getSinglePost = async (slug: string) => {
     const metadata = getPageMetaData(page);
     // get recordMap from Notion
     const recordMap = await notionAPI.getPage(page.id);
-
-    // const mdblocks = await n2m.pageToMarkdown(page.id);
-    // const mdString = n2m.toMarkdownString(mdblocks);
-    // console.log('mdString: ',mdString);
     
     return {
         metadata,

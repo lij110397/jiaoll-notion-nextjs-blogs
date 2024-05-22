@@ -1,8 +1,18 @@
 // present a single post page
 import { getAllPublishedBlogs, getSinglePost } from '@/lib/notion'
-import HomeLayout from '@/components/_homelayout'
+import HomeLayout from '@/components/homelayout'
 import { NotionRenderer } from 'react-notion-x'
 import { ExtendedRecordMap } from 'notion-types'
+
+import dynamic from 'next/dynamic'
+const Code = dynamic(() =>
+  import('react-notion-x/build/third-party/code').then((m) => m.Code)
+)
+const Collection = dynamic(() =>
+  import('react-notion-x/build/third-party/collection').then(
+    (m) => m.Collection
+  )
+)
 
 type PostProps = {
   post: {
@@ -30,6 +40,10 @@ const Post = ({ post }: PostProps) => {
           fullPage={false}
           darkMode={false}
           previewImages={false}
+          components={{
+            Code,
+            Collection,
+          }}
         />
       </section>
     </HomeLayout>
@@ -66,9 +80,14 @@ export const getStaticProps = async ({
 // getStaticPaths function will generate the paths for the blog posts based on the slugs
 export const getStaticPaths = async () => {
   const posts = await getAllPublishedBlogs()
-  const paths = posts.map(({ slug }) => ({
-    params: { slug },
-  }))
+  const paths = posts.map(({ slug }) => {
+    if (!slug) {
+      slug = 'default-slug';
+    }
+    return {
+      params: { slug },
+    }
+  })
   return {
     paths,
     fallback: 'blocking',
