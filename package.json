@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:e2e": "cypress open"
+    "test:e2e": "cypress run"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",

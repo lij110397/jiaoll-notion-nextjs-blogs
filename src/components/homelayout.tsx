@@ -17,9 +17,6 @@ interface SubLayoutProps {
 }
 
 const HomeLayout: React.FC<SubLayoutProps> = ({ children, pageTitle, url }) => {
-  if(!children) return <div>no content</div>
-  if(!pageTitle) return <div>no pageTitle</div>
-  if(!url) return <div>no url</div>
   return (
     <>
       <Navbar />

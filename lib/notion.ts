@@ -30,7 +30,7 @@ export async function getAllPublishedBlogs() {
     });
 
     const allPosts = posts.results;
-    console.log(allPosts);
+    // console.log(allPosts);
     return allPosts.map((post) => {
         return getPageMetaData(post);
     });
