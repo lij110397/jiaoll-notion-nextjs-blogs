@@ -38,3 +38,8 @@ next-env.d.ts
 
 # jest
 *.test.*
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+cypress/fixtures/
