@@ -1,0 +1,32 @@
+name: basic CI process before build to vercel
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: lint
+      run: npm run lint
+
+    - name: Run end-to-end tests
+      uses: cypress-io/github-action@v2
+      with:
+        command: npx cypress run
+        start: npm start
+        wait-on: http://localhost:3000

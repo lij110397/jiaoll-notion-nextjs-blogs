@@ -1,9 +1,9 @@
 // this card component will be used to present blog overview info like cards
 import Link from 'next/link'
 import { Post } from '@/types/types'
+import React from 'react'
 
 const BlogPreviewCard = ({ post, index }: { post: Post; index: number }) => {
-  const slug = post.slug || 'default-slug';
   return (
     <div key={index} className='card bg-base-100 shadow-xl'>
       <figure className='object-contain h-60'>

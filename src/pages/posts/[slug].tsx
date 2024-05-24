@@ -3,6 +3,7 @@ import { getAllPublishedBlogs, getSinglePost } from '@/lib/notion'
 import HomeLayout from '@/components/homelayout'
 import { NotionRenderer } from 'react-notion-x'
 import { ExtendedRecordMap } from 'notion-types'
+import React from "react";
 
 import dynamic from 'next/dynamic'
 const Code = dynamic(() =>
@@ -34,7 +35,7 @@ const Post = ({ post }: PostProps) => {
       metadata={post.metadata}
     >
       <section className='px-56 py-40'>
-        <div className='text-5xl'>{post.metadata.title} </div>
+        <div className='text-5xl blog-title'>{post.metadata.title} </div>
         <NotionRenderer
           recordMap={post.recordMap}
           fullPage={false}

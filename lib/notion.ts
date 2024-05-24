@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // this file will be used to manage all functions related to requests with Notion API
 import { Client } from "@notionhq/client";
 import { NotionAPI } from 'notion-client';
@@ -29,6 +30,7 @@ export async function getAllPublishedBlogs() {
     });
 
     const allPosts = posts.results;
+    console.log(allPosts);
     return allPosts.map((post) => {
         return getPageMetaData(post);
     });
@@ -36,6 +38,7 @@ export async function getAllPublishedBlogs() {
 
 // create a function to get the necessary metadata of a blog post
 // the metadata includes the id, title, slug, date, preview, and tags of the blog post
+
 const getPageMetaData = (post: any) => {
     return {
         id: post.id,
@@ -73,7 +76,7 @@ export const getToday = (datestring: string) => {
     const day = date.getDate();
     const month = months[date.getMonth()];
     const year = date.getFullYear();
-    let today = `${month} ${day}, ${year}`;
+    const today = `${month} ${day}, ${year}`;
     return today;
 }
 

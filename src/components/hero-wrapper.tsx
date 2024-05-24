@@ -3,20 +3,21 @@ import React from 'react'
 interface HeroProps {
   title: string
   url?: string
-  metadata?: {
-    title: string
-    date: string
-    tags: string[]
-    cover: string
-  }
+  // metadata?: {
+  //   title: string
+  //   date: string
+  //   tags: string[]
+  //   cover: string
+  // }
 }
-const HeroWrapper: React.FC<HeroProps> = ({ title, url, metadata }) => {
+const HeroWrapper: React.FC<HeroProps> = ({ title, url }) => {
   return (
     <div
       className='hero h-96 w-screen bg-secondary'
       style={{
         backgroundImage: `url(${url})`,
       }}
+      data-testid="hero"
     >
       <div className='hero-content h-full w-full p-0 text-center'>
         {url ? (
