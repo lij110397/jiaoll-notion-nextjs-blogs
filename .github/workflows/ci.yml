@@ -21,13 +21,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: lint
+        run: npm run lint
+      
       - name: Build
         run: npm run build
         env:
           NOTION_KEY: ${{ secrets.NOTION_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-      - name: lint
-        run: npm run lint
 
       - name: Run end-to-end tests
         uses: cypress-io/github-action@v2

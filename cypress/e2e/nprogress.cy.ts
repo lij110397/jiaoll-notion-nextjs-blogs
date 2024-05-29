@@ -21,7 +21,7 @@ describe('NProgress', () => {
                 cy.get('#nprogress').should('not.exist') // 检查NProgress是否被隐藏
             })
 
-            cy.visit('http://localhost:3000/posts/default-slug')
+            cy.visit('http://localhost:3000/default-slug')
         })
     })
 })

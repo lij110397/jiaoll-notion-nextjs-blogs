@@ -8,7 +8,7 @@
 // 你可能需要测试博客详情页的内容是否正确加载，包括博客标题、日期、描述和标签等。
 describe('Blog Detail Page',() => {
     beforeEach(() => {
-        cy.visit('http://localhost:3000/posts/default-slug') // 在每个测试用例开始之前访问博客列表页
+        cy.visit('http://localhost:3000/default-slug') // 在每个测试用例开始之前访问博客列表页
     })
     // blog title
     it('should display the correct blog title', ()=> {
@@ -29,7 +29,7 @@ describe('Blog Detail Page',() => {
     })
     // blog static paths generate
     it('should generate the correct static paths', ()=> {
-        cy.request('http://localhost:3000/posts/default-slug')
+        cy.request('http://localhost:3000/default-slug')
         .then((response) => {
             expect(response.status).to.eq(200)
         })
