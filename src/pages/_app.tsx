@@ -1,23 +1,64 @@
+import React, { useEffect } from 'react'
+import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
+import NProgress from 'nprogress'
+import Footer from '@/components/footer'
 import 'react-notion-x/src/styles.css'
 import 'prismjs/themes/prism-tomorrow.css'
 import 'katex/dist/katex.min.css'
-import "@/styles/globals.css";
-import "@/styles/notion.css";
-import React from "react";
+import '@/styles/globals.css'
+import '@/styles/notion.css'
+import '@/styles/nprogress.css'
+import Header from '@/components/header'
 
-import type { AppProps } from "next/app";
-import Head from 'next/head'
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+
+  useEffect(() => {
+    // 在应用加载时将 router 对象挂载到 window 对象上
+    if (typeof window !== 'undefined') {
+      (
+        window as Window & typeof globalThis & { router: typeof router }
+      ).router = router
+    }
+  }, [])
+
+  useEffect(() => {
+    const handleStart = () => {
+      // console.log(`Loading: ${url}`)
+      NProgress.start()
+    }
+    const handleStop = () => {
+      NProgress.done()
+    }
+
+    router.events.on('routeChangeStart', handleStart)
+    router.events.on('routeChangeComplete', handleStop)
+    router.events.on('routeChangeError', handleStop)
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart)
+      router.events.off('routeChangeComplete', handleStop)
+      router.events.off('routeChangeError', handleStop)
+    }
+  }, [router])
+
+  // console.log('pageProps', pageProps);
+
   return (
     <>
-      <Head>
-        <title>jiaoll blogs</title>
-        <meta name="description" content="Jiaoll's personal blogs system including sense and sensitivity blogs" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main data-theme="mytheme">
-        <Component {...pageProps} />
+      <main data-theme='mytheme'>
+        <Header
+          pageTitle='BLOG'
+          url={pageProps.metadata ? pageProps.metadata.cover : null}
+        />
+        <div className='min-h-[calc(100vh-14rem)] md:min-h-[calc(100vh-18rem)] mt-20'>
+          <Component {...pageProps} />
+        </div>
+        <Footer />
       </main>
     </>
-  );
+  )
 }
+
+export default App

@@ -5,8 +5,8 @@ import React from 'react'
 
 const BlogPreviewCard = ({ post, index }: { post: Post; index: number }) => {
   return (
-    <div key={index} className='card bg-base-100 shadow-xl blog-preview-card'>
-      <figure className='object-contain h-60'>
+    <div key={index} className='card bg-base-100 shadow-xl blog-preview-card max-w-lg'>
+      <figure className='object-contain h-32 md:h-60'>
         <img src={post.cover} alt={`post image of ${post.title}`} />
       </figure>
       <div className='card-body'>

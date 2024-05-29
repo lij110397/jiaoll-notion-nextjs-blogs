@@ -81,7 +81,7 @@ export const getToday = (datestring: string) => {
 }
 
 // function getSinglePost - fetch a single blog from notion and convert it to markdown format
-export const getSinglePost = async (slug: string) => {
+export const getSinglePostMeta = async (slug: string) => {
     const response = await notion.databases.query({
         database_id: process.env.NOTION_DATABASE_ID ?? '',
         filter: {
@@ -96,11 +96,12 @@ export const getSinglePost = async (slug: string) => {
 
     const page = response.results[0];
     const metadata = getPageMetaData(page);
-    // get recordMap from Notion
-    const recordMap = await notionAPI.getPage(page.id);
     
-    return {
-        metadata,
-        recordMap
-    };
+    return metadata;
 }
+
+export const getRecordMap = async (pageId: string) => {
+    const recordMap = await notionAPI.getPage(pageId);
+    return recordMap;
+}
+
