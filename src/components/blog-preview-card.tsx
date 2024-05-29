@@ -12,7 +12,7 @@ const BlogPreviewCard = ({ post, index }: { post: Post; index: number }) => {
       <div className='card-body'>
         <p className='text-primary text-sm'>{post.date}</p>
         <h2 className='card-title text-black hover:underline'>
-          <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+          <Link href={`/${post.slug}`}>{post.title}</Link>
           {/* <div className="badge badge-secondary">NEW</div> */}
         </h2>
         <p>{post.description}</p>
