@@ -44,8 +44,10 @@ function App({ Component, pageProps }: AppProps) {
   }, [router])
 
   useEffect(() => {
-    const theme = localStorage.getItem('mytheme') || 'sunset'
-    document.documentElement.setAttribute('data-theme', theme)
+    // const theme = localStorage.getItem('mytheme') || 'sunset';
+    // console.log('initial theme: ', theme);
+    document.documentElement.setAttribute('data-theme', 'mytheme');
+    localStorage.setItem('theme', 'mytheme');
   }, [])
 
   return (

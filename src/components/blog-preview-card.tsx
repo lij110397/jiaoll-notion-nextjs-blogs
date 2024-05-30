@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { Post } from '../../types/types'
 import React from 'react'
+import TagItem from '@/components/tag-item'
 
 const BlogPreviewCard = ({ post, index }: { post: Post; index: number }) => {
   return (
@@ -21,9 +22,7 @@ const BlogPreviewCard = ({ post, index }: { post: Post; index: number }) => {
         <p className='text-secondary-content '>{post.description}</p>
         <div className='card-actions justify-end'>
           {post.tags.map((tag, i) => (
-            <div key={i} className='badge badge-outline'>
-              {tag}
-            </div>
+            <TagItem key={i} tag={tag} />
           ))}
         </div>
       </div>
