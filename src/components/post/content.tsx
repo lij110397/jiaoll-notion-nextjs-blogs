@@ -1,7 +1,7 @@
 import React from 'react'
 import { NotionRenderer } from 'react-notion-x'
 import dynamic from 'next/dynamic'
-import { PostProps } from '@/types/types'
+import { PostProps } from '../../../types/types'
 import TagItem from '@/components/tag-item'
 
 const Code = dynamic(() =>
@@ -15,10 +15,12 @@ const Collection = dynamic(() =>
 
 const Content = (props: PostProps) => {
   return (
-    <article className='w-full md:overflow-x-visible overflow-x-scroll max-w-2xl lg:max-w-3xl'>
+    <article className='w-full md:overflow-x-visible overflow-x-scroll max-w-2xl lg:max-w-3xl text-secondary-content'>
       {props.metadata && (
         <>
-          <h1 className='text-2xl blog-title md:text-4xl'>{props.metadata.title} </h1>
+          <h1 className='text-2xl blog-title md:text-4xl'>
+            {props.metadata.title}{' '}
+          </h1>
           <div className='flex md:flex-row gap-3 md:justify-start md:items-center flex-col justify-center mt-5'>
             <div className='text-md'>{props.metadata.date}</div>
             {props.metadata && props.metadata.tags && (
@@ -41,7 +43,7 @@ const Content = (props: PostProps) => {
               }}
             />
           </div>
-          <div className='divider text-gray-300 mb-24'>END</div>
+          <div className='divider text-base-100 mb-24'>END</div>
         </>
       )}
     </article>

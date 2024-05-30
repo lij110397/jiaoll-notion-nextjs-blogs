@@ -43,11 +43,14 @@ function App({ Component, pageProps }: AppProps) {
     }
   }, [router])
 
-  // console.log('pageProps', pageProps);
+  useEffect(() => {
+    const theme = localStorage.getItem('mytheme') || 'sunset';
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [])
 
   return (
     <>
-      <main data-theme='mytheme'>
+      <main className='bg-base-100'>
         <Header
           pageTitle='BLOG'
           url={pageProps.metadata ? pageProps.metadata.cover : null}

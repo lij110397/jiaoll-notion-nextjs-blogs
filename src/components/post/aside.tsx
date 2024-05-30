@@ -2,7 +2,7 @@
 import React from 'react'
 // import { useState } from 'react'
 import TableOfContent from '@/components/table-of-content'
-import { PostProps } from '@/types/types'
+import { PostProps } from '../../../types/types'
 // import { FaArrowCircleUp } from 'react-icons/fa'
 // aside component will present two elements when scrolling
 // 1. table of content component to show catalog of the post
@@ -45,7 +45,7 @@ const Aside = ({ metadata, blockMap }: PostProps) => {
           </button>
         )}
       </div> */}
-      <div className='sticky top-10 hidden lg:block'>
+      <div className='sticky top-10 mb-24 hidden lg:block'>
         <TableOfContent metadata={metadata} blockMap={blockMap} />
       </div>
     </aside>

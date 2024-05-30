@@ -12,10 +12,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
       "@/*": ["./src/*"],
       "@/lib/*": ["./lib/*"],
-      "@/types/*": ["./src/types/*"],
+      "@/types/*": ["./types/*"],
       "@/components/*": ["./src/components/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/layouts/*": ["./src/layouts/*"]

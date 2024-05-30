@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --scrollBarColor: #fff;
+  --thumbColor: var(--foreground-rgb);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +16,23 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+
+html {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbColor) var(--scrollBarColor);
+}
+/* scrollbar setting for webkit */
+html::-webkit-scrollbar {
+  width: 5px;
+}
+html::-webkit-scrollbar-track {
+  background: var(--scrollBarColor);
+}
+html::-webkit-scrollbar-thumb {
+  background-color: var(--thumbColor);
+  border-radius: 20px;
 }
 
 body {
@@ -44,3 +63,4 @@ body {
     @apply bg-primary;
   }
 }
+

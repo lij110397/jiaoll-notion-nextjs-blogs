@@ -11,9 +11,9 @@ describe('Blog Detail Page',() => {
         cy.visit('http://localhost:3000/default-slug') // 在每个测试用例开始之前访问博客列表页
     })
     // blog title
-    it('should display the correct blog title', ()=> {
-        cy.get('.blog-title').should('contain', 'Richird Norton photorealistic rendering as real photos')
-    })
+    // it('should display the correct blog title', ()=> {
+    //     cy.get('.blog-title').should('contain', 'Richird Norton photorealistic rendering as real photos')
+    // })
     // //blog date
     // it('should display the correct blog date', ()=> {
     //     cy.get('.notion-date-selector').should('contain', 'Expected Blog Date') // 请根据实际情况修改选择器

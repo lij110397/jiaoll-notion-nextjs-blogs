@@ -5,7 +5,7 @@
  */
 import { getAllPublishedBlogs } from '../../lib/notion'
 // import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
-import { Post } from '@/types/types'
+import { Post } from '../../types/types'
 import BlogPreviewCard from '@/components/blog-preview-card'
 import Pagination from '@/components/pagination'
 import React, { useState } from 'react'
@@ -20,24 +20,24 @@ export default function Home({ posts = [] }: { posts: Post[] }) {
   if (!posts.length) return <h1>No posts!</h1>
   return (
     <>
-        <div className='p-8 flex flex-col items-center'>
-          <h1 className='text-primary font-bold mb-10'>All blogs post</h1>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20'>
-            {currentPosts &&
-              currentPosts.length > 0 &&
-              currentPosts.map(
-                (post: Post, index: number) =>
-                  post && (
-                    <BlogPreviewCard key={index} post={post} index={index} />
-                  )
-              )}
-          </div>
-          <Pagination
-            index={currentPage}
-            setCurrentPage={setCurrentPage}
-            totalPages={totalPages}
-          />
+      <div className='p-8 flex flex-col items-center'>
+        <h1 className='text-primary font-bold mb-10'>All blogs post</h1>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20'>
+          {currentPosts &&
+            currentPosts.length > 0 &&
+            currentPosts.map(
+              (post: Post, index: number) =>
+                post && (
+                  <BlogPreviewCard key={index} post={post} index={index} />
+                )
+            )}
         </div>
+        <Pagination
+          index={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalPages={totalPages}
+        />
+      </div>
     </>
   )
 }

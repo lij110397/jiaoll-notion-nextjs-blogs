@@ -6,14 +6,11 @@ import {
 } from '@/lib/notion'
 import PostLayout from '@/layouts/post-layout'
 import React from 'react'
-import { PostProps } from '@/types/types'
-
+import { PostProps } from '../../types/types'
 
 const Post = ({ metadata, blockMap }: PostProps) => {
   return (
-    <>
-      {metadata && <PostLayout metadata={metadata} blockMap={blockMap} />}
-    </>
+    <>{metadata && <PostLayout metadata={metadata} blockMap={blockMap} />}</>
   )
 }
 export default Post

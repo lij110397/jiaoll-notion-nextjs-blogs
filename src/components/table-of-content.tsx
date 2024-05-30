@@ -1,5 +1,5 @@
 import React from 'react'
-import { PostProps } from '@/types/types'
+import { PostProps } from '../../types/types'
 import { getPageTableOfContents } from 'notion-utils'
 import { PageBlock } from 'notion-types'
 
@@ -31,7 +31,7 @@ const TableOfContent = ({ metadata, blockMap }: PostProps) => {
   return (
     <div className='text-sm text-primary flex-col text-start bg-secondary p-12 rounded-lg whitespace-nowrap min-w-56 xl:min-w-64'>
       <h1 className='uppercase font-extrabold text-xl text-center'>Catalog</h1>
-      <div className='divider divider-primary'></div>
+      <div className='divider divide-primary'></div>
       <div className='text-base'>
         {toc.map((item, index) => (
           <div
@@ -44,7 +44,10 @@ const TableOfContent = ({ metadata, blockMap }: PostProps) => {
                 : ''
             }
           >
-            <a onClick={() => scrollToContent(item.id)} className='block py-1 hover:underline'>
+            <a
+              onClick={() => scrollToContent(item.id)}
+              className='block py-1 hover:underline'
+            >
               {item.text}
             </a>
           </div>

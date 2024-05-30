@@ -5,7 +5,7 @@ import { CiViewBoard } from 'react-icons/ci'
 import { CiPen } from 'react-icons/ci'
 import { CiCamera } from 'react-icons/ci'
 import { CiSun } from 'react-icons/ci'
-
+import ThemeChange from '@/components/theme-change'
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   return (
@@ -15,6 +15,7 @@ export default function Navbar() {
           <a className='btn btn-ghost text-xl'>Jiaoll</a>
         </div>
         <div className='hidden lg:flex navbar-center'>
+        <ThemeChange />
           <ul className='menu menu-horizontal px-1'>
             <li>
               <a href='https://jiaoll.com/'>Home</a>
@@ -34,6 +35,7 @@ export default function Navbar() {
           </ul>
         </div>
         <div className='navbar-end lg:hidden'>
+          <ThemeChange />
           <div className='dropdown'>
             <div
               tabIndex={0}

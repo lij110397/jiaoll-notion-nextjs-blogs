@@ -1,6 +1,6 @@
 /* NOTION CSS OVERRIDE */
 .notion {
-  @apply text-neutral dark:text-black;
+  @apply text-secondary-content;
   overflow-wrap: break-word;
 }
 .notion,
@@ -22,7 +22,7 @@
   @apply text-2xl font-semibold leading-normal my-4;
 }
 .notion-text {
-  @apply text-neutral text-base leading-relaxed my-4;
+  @apply text-secondary-content text-base leading-relaxed my-4;
 }
 
 .notion-page-link {
