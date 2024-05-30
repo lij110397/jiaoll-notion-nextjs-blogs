@@ -10,14 +10,14 @@ import '@/styles/globals.css'
 import '@/styles/notion.css'
 import '@/styles/nprogress.css'
 import Header from '@/components/header'
+import TransitionEffect from '@/components/transition-effect'
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
     // 在应用加载时将 router 对象挂载到 window 对象上
-    if (typeof window !== 'undefined') {
-      (
+    if (typeof window !== 'undefined') {(
         window as Window & typeof globalThis & { router: typeof router }
       ).router = router
     }
@@ -44,20 +44,23 @@ function App({ Component, pageProps }: AppProps) {
   }, [router])
 
   useEffect(() => {
-    const theme = localStorage.getItem('mytheme') || 'sunset';
-    document.documentElement.setAttribute('data-theme', theme);
+    const theme = localStorage.getItem('mytheme') || 'sunset'
+    document.documentElement.setAttribute('data-theme', theme)
   }, [])
 
   return (
     <>
       <main className='bg-base-100'>
+      <TransitionEffect>
         <Header
           pageTitle='BLOG'
           url={pageProps.metadata ? pageProps.metadata.cover : null}
         />
-        <div className='min-h-[calc(100vh-14rem)] md:min-h-[calc(100vh-18rem)] mt-20'>
-          <Component {...pageProps} />
-        </div>
+
+          <div className='min-h-[calc(100vh-14rem)] md:min-h-[calc(100vh-18rem)] mt-20'>
+            <Component {...pageProps} />
+          </div>
+        </TransitionEffect>
         <Footer />
       </main>
     </>

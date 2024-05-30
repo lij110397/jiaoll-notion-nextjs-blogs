@@ -61,7 +61,7 @@ export default function Navbar() {
             {isOpen && (
               <ul
                 tabIndex={0}
-                className={`menu menu-sm dropdown-content z-[1] p-2 shadow bg-primary text-white w-40 mt-2 absolute right-0`}
+                className={`menu menu-sm dropdown-content z-[1] p-2 shadow bg-primary text-white w-40 mt-2 absolute right-0  transition-all duration-700 ease-in-out`}
               >
                 <li>
                   <a href='https://jiaoll.com/home'>
