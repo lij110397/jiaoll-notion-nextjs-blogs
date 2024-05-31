@@ -23,6 +23,7 @@ const changeLanguage = (language: string) => {
   console.log(language);
   i18n.changeLanguage(language);
   localStorage.setItem('language', language);
+  console.log('i18n:', i18n.language);
 };
 
   return (
