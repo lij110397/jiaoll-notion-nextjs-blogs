@@ -8,7 +8,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"  // 添加这一行
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -18,11 +19,18 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
+  "plugins": ["react", "@typescript-eslint", "prettier"],  // 在这里添加 "prettier"
   "rules": {
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "prettier/prettier": ["error", {  // 添加这个规则
+      "singleQuote": true,
+      "jsxSingleQuote": true,
+      "semi": false,
+      "useTabs": false,
+      "tabWidth": 2,
+      "bracketSpacing": true,
+      "arrowParens": "always",
+      "trailingComma": "none"
+    }]
   }
 }

@@ -5,36 +5,36 @@ import { CiViewBoard } from 'react-icons/ci'
 import { CiPen } from 'react-icons/ci'
 import { CiCamera } from 'react-icons/ci'
 import { CiSun } from 'react-icons/ci'
-import ThemeChange from '@/components/theme-change'
-import LangSwitcher from '@/components/lang-switcher'
+import ThemeChange from '@/components/common/theme-change'
+import LangSwitcher from '@/components/common/lang-switcher'
 import { useTranslation } from 'react-i18next'
 export const navLinks = [
   { href: 'https://jiaoll.com/', icon: <IoHomeOutline />, label: 'HOME' },
   {
     href: 'https://jiaoll.com/projects',
     icon: <CiViewBoard />,
-    label: 'PROJECTS',
+    label: 'PROJECTS'
   },
   {
     href: '/',
     icon: <CiPen />,
     label: 'BLOGS',
-    isNextLink: true,
+    isNextLink: true
   },
   { href: 'https://jiaoll.com/photos', icon: <CiCamera />, label: 'PHOTOS' },
-  { href: 'https://jiaoll.com/about', icon: <CiSun />, label: 'ABOUT' },
+  { href: 'https://jiaoll.com/about', icon: <CiSun />, label: 'ABOUT' }
 ]
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const { t } = useTranslation();
+  const [isOpen, setIsOpen] = React.useState(false)
+  const { t } = useTranslation()
   return (
     <>
       <div className='navbar bg-primary text-primary-content'>
-        <div className='flex-1 navbar-start'>
+        <div className='navbar-start flex-1'>
           <a className='btn btn-ghost text-xl'>Jiaoll</a>
         </div>
-        <div className='hidden lg:flex navbar-center'>
+        <div className='navbar-center hidden lg:flex'>
           <ThemeChange />
           <LangSwitcher />
           <ul className='menu menu-horizontal px-1'>
@@ -56,7 +56,7 @@ export default function Navbar() {
             <div
               tabIndex={0}
               role='button'
-              className='btn btn-ghost '
+              className='btn btn-ghost'
               onClick={() => setIsOpen(!isOpen)}
             >
               <svg
@@ -77,7 +77,7 @@ export default function Navbar() {
             {isOpen && (
               <ul
                 tabIndex={0}
-                className={`menu menu-sm dropdown-content z-[1] p-2 shadow bg-primary text-white w-40 mt-2 absolute right-0  transition-all duration-700 ease-in-out`}
+                className={`menu dropdown-content menu-sm absolute right-0 z-[1] mt-2 w-40 bg-primary p-2 text-white shadow transition-all duration-700 ease-in-out`}
               >
                 {navLinks.map((link, index) => (
                   <li key={index}>

@@ -11,19 +11,19 @@ const ThemeChange = () => {
   }, [])
 
   // when clicked change the theme of the project
-function changeTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  // console.log('currentTheme: ', currentTheme);
-  
-  // 根据当前主题来切换到新的主题
-  const newTheme = currentTheme === 'mytheme' ? 'sunset' : 'mytheme';
-  // console.log('newTheme: ', newTheme);
-  document.documentElement.setAttribute('data-theme', newTheme);
-  setTheme(newTheme)
+  function changeTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    // console.log('currentTheme: ', currentTheme);
 
-  // 存储新主题到localStorage
-  localStorage.setItem('theme', newTheme);
-}
+    // 根据当前主题来切换到新的主题
+    const newTheme = currentTheme === 'mytheme' ? 'sunset' : 'mytheme'
+    // console.log('newTheme: ', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme)
+    setTheme(newTheme)
+
+    // 存储新主题到localStorage
+    localStorage.setItem('theme', newTheme)
+  }
 
   return (
     <label className='flex cursor-pointer gap-2'>
@@ -44,7 +44,7 @@ function changeTheme() {
       <input
         type='checkbox'
         value={theme}
-        className='toggle theme-controller'
+        className='theme-controller toggle'
         onChange={changeTheme}
       />
       <svg
@@ -60,7 +60,6 @@ function changeTheme() {
       >
         <path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'></path>
       </svg>
-      
     </label>
   )
 }

@@ -2,11 +2,11 @@
 import {
   getAllPublishedBlogs,
   getSinglePostMeta,
-  getRecordMap,
+  getRecordMap
 } from '@/lib/notion'
 import PostLayout from '@/layouts/post-layout'
 import React from 'react'
-import { PostProps } from '../../types/types'
+import { PostProps } from '@/types/types'
 
 const Post = ({ metadata, blockMap }: PostProps) => {
   return (
@@ -16,7 +16,7 @@ const Post = ({ metadata, blockMap }: PostProps) => {
 export default Post
 
 export const getStaticProps = async ({
-  params,
+  params
 }: {
   params: { slug: string }
 }) => {
@@ -26,18 +26,18 @@ export const getStaticProps = async ({
     return {
       props: {
         metadata,
-        blockMap,
+        blockMap
       },
-      revalidate: 1,
+      revalidate: 1
     }
   } catch (error) {
     console.error(error)
     return {
       props: {
         metadata: null,
-        blockMap: null,
+        blockMap: null
       },
-      revalidate: 1,
+      revalidate: 1
     }
   }
 }
@@ -49,11 +49,11 @@ export const getStaticPaths = async () => {
       slug = 'default-slug'
     }
     return {
-      params: { slug },
+      params: { slug }
     }
   })
   return {
     paths,
-    fallback: true,
+    fallback: true
   }
 }

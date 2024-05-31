@@ -6,17 +6,17 @@ interface HeroProps {
   url?: string
 }
 const HeroWrapper: React.FC<HeroProps> = ({ title, url }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <div
-      className='hero md:h-96 w-screen bg-secondary h-48'
+      className='hero h-48 w-screen bg-secondary md:h-96'
       style={{
-        backgroundImage: url?`url(${url})`:'',
+        backgroundImage: url ? `url(${url})` : ''
       }}
     >
       <div className='hero-content h-full w-full p-0 text-center'>
         {url ? (
-          <div className='hero-content h-full w-full text-center object-contain max-w-720'></div>
+          <div className='max-w-720 hero-content h-full w-full object-contain text-center'></div>
         ) : (
           <>
             <div className='max-w-md'>

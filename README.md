@@ -1,40 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Name  - My Blog system
+[Click Link to check my blog website](https://blog.jiaoll.com)
 
-## Getting Started
+# Project Description
+This blog system is part of my personal website. It is a Notion + Next.js project. It uses Notion my CMS, which is my note systems. As for the stacks, it uses Next.js + DaisyUI + Tailwind CSS. It also uses lots of others packages to complement functions like language switch, theme switch and so on.
 
-First, run the development server:
+# Version released
+## v1.0
+- Time: released at May 31 2024
+- Content: This version includes most playable functions of a blog system, mainly including blog lists page(home page) and blog post page.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Skill Stack used in the project
+## Main Stack
+- Notion as CMS - use Notion API
+- Next.js + DaisyUI + Tailwind CSS
+- Vercel as deployment platform
+## Others
+- Auto coding tool - Github Copilot used in the development.
+## Thanks to the authors of these resources. There are really helpful to make my simply blog system possible.
+### Notion + Next.js
+Using Notion as a CMS shares common process:
+1. Create a new Notion Integration and a blog system database(add the integration in its share)
+2. Setup your Next.js project and add Notion API secret to connect with Notion API
+3. Use Notion API to get posts from the database and show it in the blog list
+3. Use Notion API to get post content and present it(react-notion-x)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[How to create next js blog using notion as a cms](https://bejamas.io/hub/guides/how-to-create-next-js-blog-using-notion-as-a-cms)
+[Building a blog with Notion & Next.js](https://splitbee.io/blog/notion-as-cms-using-nextjs)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Notion-based Blog system
+[NotionX - a blog system of notion+next.js](https://github.com/NotionX/react-notion-x?tab=readme-ov-file#packages)
+[Notionic - a blog system of notion+next.js](https://github.com/izuolan/notionic/tree/5116f012659d8ac31f6b6870c1012a4a6f6fa44c)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### How to better present the content just like other blog systems - CSS and Responsive design
+1. Responsive Design using Tailwind CSS variable class
+2. Switch Themes using Daisy UI theme system and **[theme-change package](https://github.com/saadeghi/theme-change)**
+3. Add Animation using **framer-motion** package when switch the pages
+4. Use **react-i18next** to switch language in client render
+5. Use **NProgress** package to show progress bar when loading the page
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Deploy to vercel through github repository
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Add Testing process and CI workflow
+1. Unit Testing
+2. Cypress E2E Testing
+3. CI using Github Action
 
-## Learn More
+### Make the code prettier
+1. Use prettier and eslint to stylish my code
 
-To learn more about Next.js, take a look at the following resources:
+# Helpful shares
+[My experience of using github copilot as my coding coach and coding assistant]()
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Future
+## SEO of the blog page
+How to add SEO to the page.
+## Do server-render to the pages for different languages when my blog posts are getting more
+## Turn Notion Page into formats used in other platform, like 公众号, medium and so on. 
+I can write one post and do it can help me to make it formats usable for other platform.

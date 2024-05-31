@@ -3,11 +3,11 @@
  * It includes a basic header with the website name and description.
  * you will fetch the blog posts at build time using getStaticProps and pre-render the page
  */
-import { getAllPublishedBlogs } from '../../lib/notion'
+import { getAllPublishedBlogs } from '@/lib/notion'
 // import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
-import { Post } from '../../types/types'
+import { Post } from '@/types/types'
 import BlogPreviewCard from '@/components/blog-preview-card'
-import Pagination from '@/components/pagination'
+import Pagination from '@/components/common/pagination'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -18,14 +18,14 @@ export default function Home({ posts = [] }: { posts: Post[] }) {
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
   const totalPages = Math.ceil(posts.length / 6)
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   if (!posts.length) return <h1>{t('NO_POST')}</h1>
   return (
     <>
-      <div className='p-8 flex flex-col items-center'>
-        <h1 className='text-primary font-bold mb-10'>{t('ALL_BLOGS')}</h1>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20'>
+      <div className='flex flex-col items-center p-8'>
+        <h1 className='mb-10 font-bold text-primary'>{t('ALL_BLOGS')}</h1>
+        <div className='mb-20 grid grid-cols-1 gap-10 lg:grid-cols-2'>
           {currentPosts &&
             currentPosts.length > 0 &&
             currentPosts.map(
@@ -50,8 +50,8 @@ export async function getStaticProps() {
   const posts = await getAllPublishedBlogs()
   return {
     props: {
-      posts,
+      posts
     },
-    revalidate: 60, // regenerate the page every 60 seconds
+    revalidate: 60 // regenerate the page every 60 seconds
   }
 }

@@ -1,8 +1,8 @@
 // import React, { useEffect } from 'react'
 import React from 'react'
 // import { useState } from 'react'
-import TableOfContent from '@/components/table-of-content'
-import { PostProps } from '../../../types/types'
+import TableOfContent from '@/components/post/table-of-content'
+import { PostProps } from '@/types/types'
 // import { FaArrowCircleUp } from 'react-icons/fa'
 // aside component will present two elements when scrolling
 // 1. table of content component to show catalog of the post
