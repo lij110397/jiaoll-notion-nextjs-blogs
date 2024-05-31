@@ -55,7 +55,7 @@ function App({ Component, pageProps }: AppProps) {
       <main className='bg-base-100'>
       <TransitionEffect>
         <Header
-          pageTitle='BLOG'
+          pageTitle='HERO_TITLE'
           url={pageProps.metadata ? pageProps.metadata.cover : null}
         />
 

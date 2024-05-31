@@ -4,15 +4,23 @@ import { MdOutlineEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import Link from "next/link";
 import React from 'react'
+import {navLinks} from '@/components/navbar';
+import { useTranslation } from 'react-i18next'
+
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="footer footer-center rounded bg-secondary p-10 text-primary">
       <nav className="grid grid-flow-col gap-4">
-        <Link href="https://jiaoll.com/">Home</Link>
-        <Link href="https://jiaoll.com/projects">Projects</Link>
-        <Link href="/blogs">Blogs</Link>
-        <Link href="https://jiaoll.com/projects/photos/all">Photos</Link>
-        <Link href="https://jiaoll.com/about">About</Link>
+      {navLinks.map((link, index) => (
+              <li key={index}>
+                {link.isNextLink ? (
+                  <Link href={link.href}>{t(`NAVIGATION.${link.label}`)}</Link>
+                ) : (
+                  <a href={link.href}>{t(`NAVIGATION.${link.label}`)}</a>
+                )}
+              </li>
+            ))}
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">

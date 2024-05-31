@@ -1,0 +1,12 @@
+{
+    "ALL_BLOGS": "All blogs post",
+    "NO_POST!": "No posts!",
+    "HERO_TITLE":"BLOG",
+    "NAVIGATION": {
+        "HOME": "Home",
+        "BLOGS": "Blog",
+        "ABOUT": "About",
+        "PROJECTS":"Projects",
+        "PHOTOS":"Photos"
+    }
+}

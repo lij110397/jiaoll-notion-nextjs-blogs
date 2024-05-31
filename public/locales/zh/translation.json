@@ -1,0 +1,12 @@
+{
+    "ALL_BLOGS": "所有帖子",
+    "NO_POST!": "没有帖子!",
+    "HERO_TITLE":"我的博客",
+    "NAVIGATION": {
+        "HOME": "主页",
+        "BLOGS": "博客",
+        "ABOUT": "关于",
+        "PROJECTS":"项目",
+        "PHOTOS":"摄影作品"
+    }
+}

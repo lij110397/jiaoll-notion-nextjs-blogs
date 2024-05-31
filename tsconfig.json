@@ -19,7 +19,8 @@
       "@/types/*": ["./types/*"],
       "@/components/*": ["./src/components/*"],
       "@/styles/*": ["./src/styles/*"],
-      "@/layouts/*": ["./src/layouts/*"]
+      "@/layouts/*": ["./src/layouts/*"],
+      "@/public/*": ["./public/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.cjs"],

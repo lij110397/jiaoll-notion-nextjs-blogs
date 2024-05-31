@@ -1,10 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface HeroProps {
   title: string
   url?: string
 }
 const HeroWrapper: React.FC<HeroProps> = ({ title, url }) => {
+  const { t } = useTranslation();
   return (
     <div
       className='hero md:h-96 w-screen bg-secondary h-48'
@@ -19,7 +21,7 @@ const HeroWrapper: React.FC<HeroProps> = ({ title, url }) => {
           <>
             <div className='max-w-md'>
               <h1 className='text-6xl font-bold uppercase text-primary'>
-                {title}
+                {t(`${title}`)}
               </h1>
             </div>
           </>
