@@ -4,6 +4,9 @@ import { initReactI18next } from 'react-i18next';
 import HttpApi from 'i18next-http-backend';
 // import LanguageDetector from 'i18next-browser-languagedetector';
 
+const languageLoadPath = process.env.NODE_ENV === 'production' 
+    ? process.env.LANGUAGE_LOAD_PATH 
+    : 'http://localhost:3000/locales/{{lng}}/{{ns}}.json';
 i18n
   .use(HttpApi) // 加载翻译文件
   // .use(LanguageDetector) // 自动检测语言
@@ -17,7 +20,7 @@ i18n
     // },
     backend: {
       // loadPath: '/locales/{{lng}}/{{ns}}.json', // 语言文件路径
-      loadPath:'http://localhost:3000/locales/{{lng}}/{{ns}}.json' || process.env.LANGUAGE_LOAD_PATH,
+      loadPath: languageLoadPath,
     }
   });
 
