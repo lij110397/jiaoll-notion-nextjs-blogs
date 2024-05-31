@@ -14,6 +14,7 @@
   "dependencies": {
     "@notionhq/client": "^2.2.15",
     "autoprefixer": "^10.4.19",
+    "dotenv": "^16.4.5",
     "framer-motion": "^11.2.9",
     "i18n-next": "^0.0.4",
     "i18next": "^23.11.5",
