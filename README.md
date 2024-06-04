@@ -16,7 +16,8 @@ This blog system is part of my personal website. It is a Notion + Next.js projec
 - Vercel as deployment platform
 ## Others
 - Auto coding tool - Github Copilot used in the development.
-## Thanks to the authors of these resources. There are really helpful to make my simply blog system possible.
+## Useful Resources, tools, packages
+**Thanks to the authors of these resources. There are really helpful to make my simple blog system possible.**
 ### Notion + Next.js
 Using Notion as a CMS shares common process:
 1. Create a new Notion Integration and a blog system database(add the integration in its share)
@@ -48,8 +49,7 @@ Using Notion as a CMS shares common process:
 ### Make the code prettier
 1. Use prettier and eslint to stylish my code
 
-# Helpful shares
-[My experience of using github copilot as my coding coach and coding assistant]()
+# Experience shares
 
 # Future
 ## SEO of the blog page
