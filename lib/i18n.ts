@@ -17,7 +17,7 @@ i18n
   // .use(LanguageDetector) // 自动检测语言
   .use(initReactI18next) // 初始化 react-i18next
   .init({
-    fallbackLng: 'en',
+    fallbackLng: ['en', 'zh'],
     supportedLngs: ['en', 'zh'],
     debug: true,
     // detection: {

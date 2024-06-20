@@ -7,30 +7,35 @@ export const navLinks = [
     href: 'https://jiaoll.com/',
     icon: <IoHomeOutline />,
     label: 'HOME',
-    isNextLink: false
+    isNextLink: false,
+    disabled: true
   },
   {
     href: 'https://jiaoll.com/projects',
     icon: <CiViewBoard />,
     label: 'PROJECTS',
-    isNextLink: false
+    isNextLink: false,
+    disabled: true
   },
   {
     href: '/',
     icon: <CiPen />,
     label: 'BLOGS',
-    isNextLink: true
+    isNextLink: true,
+    disabled: false
   },
   {
     href: 'https://jiaoll.com/photos',
     icon: <CiCamera />,
     label: 'PHOTOS',
-    isNextLink: false
+    isNextLink: false,
+    disabled: true
   },
   {
     href: 'https://jiaoll.com/about',
     icon: <CiSun />,
     label: 'ABOUT',
-    isNextLink: false
+    isNextLink: false,
+    disabled: true
   }
 ]

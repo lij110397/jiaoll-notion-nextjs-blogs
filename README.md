@@ -2,12 +2,15 @@
 [Click Link to check my blog website](https://blog.jiaoll.com)
 
 # Project Description
-This blog system is part of my personal website. It is a Notion + Next.js project. It uses Notion my CMS, which is my note systems. As for the stacks, it uses Next.js + DaisyUI + Tailwind CSS. It also uses lots of others packages to complement functions like language switch, theme switch and so on.
+This blog system is part of my personal website. It is a Notion + Next.js project. It uses Notion as CMS, which is my note systems. As for the tech, it uses Next.js + DaisyUI + Tailwind CSS. It also uses lots of others packages to complement functions like language switch, theme switch and so on.
 
 # Version released
 ## v1.0
 - Time: released at May 31 2024
 - Content: This version includes most playable functions of a blog system, mainly including blog lists page(home page) and blog post page.
+### v1.1
+- Time: released at June 20 2024
+- Content: This version is a tiny improvement of the current version to fix theme change and language change.
 
 # Skill Stack used in the project
 ## Main Stack

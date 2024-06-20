@@ -22,9 +22,27 @@ export default function Navbar() {
             {navLinks.map((link, index) => (
               <li key={index}>
                 {link.isNextLink ? (
-                  <Link href={link.href}>{t(`NAVIGATION.${link.label}`)}</Link>
+                  <Link
+                    href={link.disabled ? '' : link.href}
+                    className={
+                      link.disabled
+                        ? 'pointer-events-none text-gray-300'
+                        : 'text-white'
+                    }
+                  >
+                    {t(`NAVIGATION.${link.label}`)}
+                  </Link>
                 ) : (
-                  <a href={link.href}>{t(`NAVIGATION.${link.label}`)}</a>
+                  <a
+                    href={link.disabled ? '' : link.href}
+                    className={
+                      link.disabled
+                        ? 'pointer-events-none text-gray-300'
+                        : 'text-white'
+                    }
+                  >
+                    {t(`NAVIGATION.${link.label}`)}
+                  </a>
                 )}
               </li>
             ))}
@@ -63,12 +81,26 @@ export default function Navbar() {
                 {navLinks.map((link, index) => (
                   <li key={index}>
                     {link.isNextLink ? (
-                      <Link href={link.href}>
+                      <Link
+                        href={link.disabled ? '' : link.href}
+                        className={
+                          link.disabled
+                            ? 'pointer-events-none text-gray-300'
+                            : 'text-white'
+                        }
+                      >
                         {link.icon}
                         {t(`NAVIGATION.${link.label}`)}
                       </Link>
                     ) : (
-                      <a href={link.href}>
+                      <a
+                        href={link.disabled ? '' : link.href}
+                        className={
+                          link.disabled
+                            ? 'pointer-events-none text-gray-300'
+                            : 'text-white'
+                        }
+                      >
                         {link.icon}
                         {t(`NAVIGATION.${link.label}`)}
                       </a>
