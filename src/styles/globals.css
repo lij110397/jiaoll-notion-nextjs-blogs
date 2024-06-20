@@ -63,3 +63,10 @@ body {
     @apply bg-primary;
   }
 }
+
+/* color */
+.green-text-gradient {
+  background: linear-gradient(to right, #3CB371, #1E90FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

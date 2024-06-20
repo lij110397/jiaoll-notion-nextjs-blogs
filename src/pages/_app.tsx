@@ -53,7 +53,7 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <main className='bg-base'>
+      <main className='bg-base-100'>
         <TransitionEffect>
           <Header
             pageTitle='HERO_TITLE'

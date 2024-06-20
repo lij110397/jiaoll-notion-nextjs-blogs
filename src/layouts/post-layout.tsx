@@ -16,7 +16,7 @@ const PostLayout = ({ metadata, blockMap }: PostProps) => {
         />
       </Head>
       <div className='m-auto w-full flex-grow px-4'>
-        <div className='mx-5 flex flex-row justify-center gap-5'>
+        <div className='mx-5 flex flex-row justify-center gap-20'>
           <Content metadata={metadata} blockMap={blockMap} />
           <Aside metadata={metadata} blockMap={blockMap} />
         </div>

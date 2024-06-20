@@ -21,7 +21,7 @@
       "@/styles/*": ["./src/styles/*"],
       "@/layouts/*": ["./src/layouts/*"],
       "@/public/*": ["./public/*"],
-      "@/constants/*": ["./src/constants/*"],
+      "@/constants/*": ["./src/constants/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.cjs"],

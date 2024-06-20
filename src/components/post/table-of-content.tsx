@@ -32,7 +32,7 @@ const TableOfContent = ({ metadata, blockMap }: PostProps) => {
     <div className='min-w-56 flex-col whitespace-nowrap rounded-lg bg-secondary p-12 text-start text-sm text-primary xl:min-w-64'>
       <h1 className='text-center text-xl font-extrabold uppercase'>Catalog</h1>
       <div className='divider divide-primary'></div>
-      <div className='text-base'>
+      <div className='text-primary'>
         {toc.map((item, index) => (
           <div
             key={index}

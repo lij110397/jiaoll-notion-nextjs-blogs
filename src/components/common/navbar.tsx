@@ -13,7 +13,9 @@ export default function Navbar() {
     <>
       <div className='navbar bg-primary text-primary-content'>
         <div className='navbar-start flex-1'>
-          <a className='btn btn-ghost text-xl'>Jiaoll</a>
+          <Link className='btn btn-ghost text-xl' href='/'>
+            Jiaoll
+          </Link>
         </div>
         <div className='navbar-center hidden lg:flex'>
           <ThemeChange />

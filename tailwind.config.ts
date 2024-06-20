@@ -29,7 +29,7 @@ const config: Config = {
       {
         sunset: {
           ...sunset,
-          base: '#4b5563',
+          'base-100': '#4b5563',
           secondary: '#6b7280'
         }
       },
@@ -40,8 +40,8 @@ const config: Config = {
           secondary: '#D6E8CE', // 界面中的辅助元素
           accent: '#FDE047', // 用于强调和突出界面的特定部分
           neutral: '#3D6838', //界面的背景和基础元素；导航栏
-          base: '#FFFFFF',
-          content: '#161616'
+          'base-100': '#FFFFFF',
+          'secondary-content': '#161616'
         }
       }
     ]

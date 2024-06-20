@@ -1,12 +1,13 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
+import TypeWriter from './typewriter'
 
 interface HeroProps {
   title: string
   url?: string
 }
-const HeroWrapper: React.FC<HeroProps> = ({ title, url }) => {
-  const { t } = useTranslation()
+const HeroWrapper: React.FC<HeroProps> = ({ url }) => {
+  // const { t } = useTranslation()
   return (
     <div
       className='hero h-48 w-screen bg-secondary md:h-96'
@@ -19,11 +20,10 @@ const HeroWrapper: React.FC<HeroProps> = ({ title, url }) => {
           <div className='max-w-720 hero-content h-full w-full object-contain text-center'></div>
         ) : (
           <>
-            <div className='max-w-md'>
-              <h1 className='text-6xl font-bold uppercase text-primary'>
+            {/* <h1 className='text-6xl font-bold uppercase text-primary'>
                 {t(`${title}`)}
-              </h1>
-            </div>
+              </h1> */}
+            <TypeWriter />
           </>
         )}
       </div>
