@@ -1,33 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
-import { IoHomeOutline } from 'react-icons/io5'
-import { CiViewBoard } from 'react-icons/ci'
-import { CiPen } from 'react-icons/ci'
-import { CiCamera } from 'react-icons/ci'
-import { CiSun } from 'react-icons/ci'
+import { navLinks } from '@/constants'
 import ThemeChange from '@/components/common/theme-change'
 import LangSwitcher from '@/components/common/lang-switcher'
 import { useTranslation } from 'react-i18next'
-export const navLinks = [
-  { href: 'https://jiaoll.com/', icon: <IoHomeOutline />, label: 'HOME' },
-  {
-    href: 'https://jiaoll.com/projects',
-    icon: <CiViewBoard />,
-    label: 'PROJECTS'
-  },
-  {
-    href: '/',
-    icon: <CiPen />,
-    label: 'BLOGS',
-    isNextLink: true
-  },
-  { href: 'https://jiaoll.com/photos', icon: <CiCamera />, label: 'PHOTOS' },
-  { href: 'https://jiaoll.com/about', icon: <CiSun />, label: 'ABOUT' }
-]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const { t } = useTranslation()
+  // console.log(navLinks)
   return (
     <>
       <div className='navbar bg-primary text-primary-content'>

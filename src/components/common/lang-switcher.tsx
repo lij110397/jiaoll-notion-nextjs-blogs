@@ -29,7 +29,7 @@ const LangSwitcher = () => {
   return (
     <div className='dropdown dropdown-end'>
       <div tabIndex={0} className='btn btn-ghost m-1' role='button'>
-        <IoLanguage />
+        <IoLanguage size='20px' />
       </div>
       <ul
         tabIndex={0}

@@ -4,7 +4,6 @@
  * you will fetch the blog posts at build time using getStaticProps and pre-render the page
  */
 import { getAllPublishedBlogs } from '@/lib/notion'
-// import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 import { Post } from '@/types/types'
 import BlogPreviewCard from '@/components/blog-preview-card'
 import Pagination from '@/components/common/pagination'

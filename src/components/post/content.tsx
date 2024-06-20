@@ -43,7 +43,7 @@ const Content = (props: PostProps) => {
               }}
             />
           </div>
-          <div className='divider mb-24 text-base-100'>END</div>
+          <div className='divider mb-24 text-primary'>END</div>
         </>
       )}
     </article>
