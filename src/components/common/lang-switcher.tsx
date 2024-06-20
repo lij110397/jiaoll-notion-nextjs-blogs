@@ -33,7 +33,7 @@ const LangSwitcher = () => {
       </div>
       <ul
         tabIndex={0}
-        className='menu dropdown-content z-[1] flex w-auto items-center justify-center rounded-lg bg-base-100 px-5 text-primary shadow'
+        className='bg-base menu dropdown-content z-[1] flex w-auto items-center justify-center rounded-lg px-5 text-primary shadow'
       >
         <li onClick={() => changeLanguage('en')}>
           <a>English</a>
