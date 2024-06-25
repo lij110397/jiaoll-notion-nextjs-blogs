@@ -15,11 +15,11 @@ const Collection = dynamic(() =>
 
 const Content = (props: PostProps) => {
   return (
-    <article className='w-full max-w-2xl overflow-x-scroll text-secondary-content md:overflow-x-visible lg:max-w-3xl'>
+    <article className='ml-24 w-full max-w-2xl overflow-x-scroll text-secondary-content md:overflow-x-visible lg:max-w-3xl'>
       {props.metadata && (
         <>
-          <h1 className='blog-title text-2xl md:text-4xl'>
-            {props.metadata.title}{' '}
+          <h1 className='blog-title text-2xl font-extrabold md:text-4xl'>
+            {props.metadata.title}
           </h1>
           <div className='mt-5 flex flex-col justify-center gap-3 md:flex-row md:items-center md:justify-start'>
             <div className='text-md'>{props.metadata.date}</div>

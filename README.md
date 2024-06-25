@@ -10,7 +10,7 @@ This blog system is part of my personal website. It is a Notion + Next.js projec
 - Content: This version includes most playable functions of a blog system, mainly including blog lists page(home page) and blog post page.
 ### v1.1
 - Time: released at June 20 2024
-- Content: This version is a tiny improvement of the current version to fix theme change and language change.
+- Content: This version is a tiny improvement of the current version to fix theme change and language change. I also add typewriter in the Hero section to make it look more interesting.
 
 # Skill Stack used in the project
 ## Main Stack
@@ -41,6 +41,7 @@ Using Notion as a CMS shares common process:
 3. Add Animation using **framer-motion** package when switch the pages
 4. Use **react-i18next** to switch language in client render
 5. Use **NProgress** package to show progress bar when loading the page
+6. Use **[Typed.js](https://github.com/mattboldt/typed.js?tab=readme-ov-file)** package to show typewriter component in the Hero section.
 
 ### Deploy to vercel through github repository
 
