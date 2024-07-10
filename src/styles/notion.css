@@ -13,16 +13,16 @@
 }
 
 .notion-h1 {
-  @apply my-6 text-3xl font-bold leading-tight;
+  @apply mb-3 text-3xl font-bold leading-tight;
 }
 .notion-h2 {
-  @apply my-5 text-2xl font-semibold leading-snug;
+  @apply mb-3 text-2xl font-semibold leading-snug;
 }
 .notion-h3 {
-  @apply my-4 text-xl font-semibold leading-normal;
+  @apply mb-3 text-xl font-semibold leading-normal;
 }
 .notion-text {
-  @apply my-4 text-base-100 leading-relaxed text-secondary-content;
+  @apply text-base-100 leading-relaxed text-secondary-content;
 }
 
 .notion-page-link {
